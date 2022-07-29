@@ -12,23 +12,92 @@
     </nav>
     <main>
         <h2>Vacation Contest Sign-Up Form</h2>
-        <form> <!-- TODO: Set Action and Method Properties -->
-            <div>
-                <label for="firstname">Your First Name</label>
-                <input type="text" id="firstname" name="firstname">
+        <form method="get" action="results.html"> <!-- TODO: Set Action and Method Properties -->
+            <div>       
+                <label for="firstname">Your First Name</label> 
+                <span class="required-field">*</span>
+                <input type="text" id="firstname" name="firstname" required minlength="2" maxlength="35">
                 <!-- TODO: Create a "lastname" input with type "text" -->
+               <label for="lastname">Your Last Name</label>
+               <span class="required-field">*</span>
+                <input type="text" id="lastname" name="lastname" required minlength="2" maxlength="35">
+                <label for="age">Your Age</label>
+                <input type="number" id="age" name="age" min="21" max="120">
+                <h5>Must be 21 years or older to enter.</h5>
             </div>
             <!-- TODO: Make fieldset and legend -->
+            <fieldset>
+                <legend>Your Contact Info</legend>
+                <label for="email">Your Email</label>
+                <span class="required-field">*</span>
+                <input type="email" id="email" name="email" required>
             <!-- Todo: Email Input -->
             <!-- Todo: Street Address Input -->
+            <label>Your Street Address</label>
+            <input type="text" name="address">
             <!-- Todo: City, State, and Zip Inputs -->
-
+            <label>Your City</label>
+            <input type="text" name="city">
+            <label>Your State</label>
+            <input name="state" list="state-list">
+            <datalist id="state-list">
+                <option value="AK">Alaska</option>
+                <option value="MN">Minnesota</option>
+                <option value="NY">New York</option>
+            </datalist>
+            <label>Your Zipcode</label>
+            <input type="text" name="zip" pattern="[0-9]{5}" title="5-Digit US Zip Code">
+            </fieldset>
             <!-- TODO: Second fieldset -->
+            <fieldset>
+                <legend>Your Preferences</legend>
+                <h3>Choose Your Location</h3>
+                <div>
+                    <input type="radio" id="aruba" name="location" value="Aruba" checked>
+                    <label for="aruba">Aruba</label>
+                </div>
+                <div>
+                    <input type="radio" id="japan" name="location" value="Japan">
+                    <label for="japan">Japan</label>
+                </div>
+                <div>
+                    <input type="radio" id="reykjavik" name="location" value="Reykjavik"></input>
+                    <label for="reykjavik">Reykjavik</label>
+                </div>
+                <div>
+                    <input type="radio" id="new-zealand" name="location" value="New Zealand">
+                    <label for="new-zealand">New Zealand</label>
+                </div>
+            </fieldset>
             <!-- TODO: Radio buttons for selecting preferred destination -->
             <!-- TODO: Color input for selecting favorite color -->
+            <label>Your Favorite Color</label>
+            <input name="color" type="color">
             <!-- TODO: Checkboxes for selecting extra add-ons -->
-            
+            <label>Extras</label>
+            <div>
+                <input type="checkbox"
+                value="sauna-access"
+                name="extras" checked>
+                <label for="sauna-access">Sauna Access</label>
+            </div>
+            <div>
+                <input type="checkbox"
+                value="hot-tub"
+                name="extras">
+                <label for="hot-tub">In-Room Hot Tub</label>
+            </div>
+            <div>
+                <input type="checkbox"
+                value="best-view"
+                name="extras">
+                <label for="best-view">Best View</label>
+            </div>
+            <label>Your Secret Code (must be 6 alphanumeric characters)</label>
+            <span class="required-field">*</span>
+            <input type="password" required>
             <!-- TODO: Submit Button -->
+            <input type="submit" value="Enter The Contest" title="6 Alphanumeric Character Passcode" pattern="[0-9a-zA-Z]{6}">
         </form>
     </main>
     <footer>
